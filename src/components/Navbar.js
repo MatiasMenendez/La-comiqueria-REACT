@@ -1,8 +1,7 @@
 import logo from './multimedia/imagen/logo.jpeg';
 import React from 'react';
 import "bootstrap/dist/css/bootstrap.min.css";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {faCartShopping} from '@fortawesome/free-solid-svg-icons'
+import CartWidget from './CartWidget'
 
 const Navbar = () => {
     return <nav className="navbar navbar-expand-lg navbar-light menuNavegable">
@@ -27,9 +26,7 @@ const Navbar = () => {
           <li className="nav-item">
             <a className="nav-link" href="#contacto">CONTACTO</a>
           </li>
-          <li className="nav-item">
-          <FontAwesomeIcon icon={faCartShopping} />
-          </li>
+          <CartWidget />
         </ul>
       </div>
     </div>

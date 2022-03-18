@@ -1,9 +1,10 @@
 import React from "react";
 
-const ItemListContainer = () =>{
-  return <section>
-      <h1>Futuro catalogo</h1>
+function ItemListContainer (props){
+  return (<section>
+      <h1>{props.greeting}</h1>
   </section>
+  )
 }
 
 export default ItemListContainer;

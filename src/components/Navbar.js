@@ -3,6 +3,7 @@ import React from 'react';
 import "bootstrap/dist/css/bootstrap.min.css";
 import CartWidget from './CartWidget'
 
+
 const Navbar = () => {
     return <nav className="navbar navbar-expand-lg navbar-light menuNavegable">
     <div className="container-fluid">

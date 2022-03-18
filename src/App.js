@@ -9,6 +9,7 @@ function App() {
       <header className="App-header">
         <Navbar />
         <img src={logo} className="App-logo" alt="logo" />
+        <button className="boton">Press me</button>
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
@@ -21,7 +22,7 @@ function App() {
           Learn React
         </a>
       </header>
-      <ItemListContainer />
+      <ItemListContainer greeting="Futuro catalogo"/>
     </div>
   );
 }

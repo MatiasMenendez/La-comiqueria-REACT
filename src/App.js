@@ -13,7 +13,7 @@ function App() {
       <ItemListContainer greeting="Futuro catalogo"/>
       <div className="firstItemCount">
       <img src={logo} alt='Cargando foto' />
-        <ItemCount stock={5} initial={1} />
+        <ItemCount stock={5} />
       </div>
     </div>
   );

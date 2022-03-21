@@ -1,29 +1,25 @@
 import React, {useState} from "react";
 
-function ItemCount ({stock, initial}) {
-    const [contador, setContador] = useState(initial);
+function ItemCount ({stock}) {
+    const [contador, setContador] = useState(0);
 
-    const clickSuma =() => {
-    if(initial<=stock-1){
-       setContador(initial+1)
-    } else{
-        setContador(initial+0)
+    const addCount =() => {
+    if(stock>contador){
+       setContador((prevCount)=>prevCount+1)
     }
     };
 
-    const clickResta =() => {
-        if(initial>=2){
-           setContador(initial-1)
-        } else{
-            setContador(initial-0)
+    const substractCount =() => {
+        if(contador>=1){
+           setContador((prevCount)=>prevCount-1)
         }
         };
 
     return (<div>
         <p>Historietas de spider-man</p>
-        <button type="button" className="btn btn-outline-primary" onClick={()=> clickResta()}>-</button>
-        <output>{initial=contador}</output>
-        <button type="button" className="btn btn-outline-primary" onClick={()=> clickSuma()}>+</button>
+        <button type="button" className="btn btn-outline-primary" onClick={()=> substractCount()}>-</button>
+        <output>{contador}</output>
+        <button type="button" className="btn btn-outline-primary" onClick={()=> addCount()}>+</button>
     </div>
     )
 }

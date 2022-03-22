@@ -3,6 +3,7 @@ import './App.css';
 import Navbar from './components/Navbar';
 import ItemListContainer from './components/ItemListContainer';
 import ItemCount from './components/ItemCount';
+import ComicList from './components/ItemList';
 
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
       <header className="App-header">
         <Navbar />
       </header>
+      <ComicList />
       <ItemListContainer greeting="Futuro catalogo"/>
       <div className="firstItemCount">
       <img src={logo} alt='Cargando foto' />

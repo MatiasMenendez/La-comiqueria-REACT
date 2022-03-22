@@ -57,3 +57,7 @@ output{width: 100px;
 height: 35px;
 border-style: groove;
 border-color: black;}
+
+.catalogo{display: flex;
+  flex-direction: row;
+justify-content: space-between;}

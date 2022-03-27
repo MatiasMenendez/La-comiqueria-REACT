@@ -33,15 +33,15 @@ width: 100%;
 font-size: calc(10px + 2vmin);
 }
 
-img {width: 40%;
+img {width: 54%;
 height: 65%;}
 
 .firstItemCount{
   border-style: double;
   border-color: black;
   border-radius: 50px;
-  width: 350px;
-  height: 350px;
+  width: 420px;
+  height: 590px;
   position: relative;
   left: 620px;
 }

@@ -7,7 +7,6 @@ export const Comics = ({nombre, portada, descripcion}) => {
   <div className="card-body">
     <h5 className="card-title">{nombre}</h5>
     <p className="card-text">{descripcion}</p>
-    <a href="index.html" className="btn btn-primary">Comprar</a>
   </div>
   </div>
     );

@@ -16,7 +16,6 @@ function ItemCount ({stock}) {
         };
 
     return (<div>
-        <p>Historietas de spider-man</p>
         <button type="button" className="btn btn-outline-primary" onClick={()=> substractCount()}>-</button>
         <output>{contador}</output>
         <button type="button" className="btn btn-outline-primary" onClick={()=> addCount()}>+</button>

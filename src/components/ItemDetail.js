@@ -6,7 +6,7 @@ const ItemDetail = ({comicDetail}) => {
     return (
         <div className="firstItemCount" >
             <h2>Detalle del producto: {nombre}</h2>
-            <img src={portada} alt={nombre}/>
+            <img src={portada} alt={nombre} width="524" height="807"/>
             <p>{descripcion}</p>
             <ItemCount stock={5}/>
         </div>

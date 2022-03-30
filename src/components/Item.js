@@ -1,8 +1,7 @@
-import React from "react"
+import React from "react";
 import { Link } from "react-router-dom";
 
-export const Item = ({id, nombre, portada, descripcion}) => {
-  
+export const Comics = ({id, nombre, portada, descripcion}) => {
     return (
  <div className="card" style={{width:'18rem'}}>
   <img src={portada} className="card-img-top" alt="..."/>
@@ -15,4 +14,4 @@ export const Item = ({id, nombre, portada, descripcion}) => {
     );
 }
 
-export default Item;
+export default Comics;

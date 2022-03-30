@@ -1,12 +1,13 @@
 import React from "react";
-import Item from "./Item";
+import Comics from "./Item";
 
 const ComicList = ({listaComics}) =>{
+    
     return (
     <section className="catalogo">
                  {
                      listaComics.map((item) => (
-                     <Item nombre={item.nombre} portada={item.portada} descripcion={item.descripcion} key={item.id}/>))
+                     <Comics id={item.id} nombre={item.nombre} portada={item.portada} descripcion={item.descripcion}/>))
                  }
                 </section> 
     );

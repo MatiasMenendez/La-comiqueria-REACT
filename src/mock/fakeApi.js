@@ -90,7 +90,7 @@ const comics = [
     if(condition){
       setTimeout(()=>{
         resolve(comics)
-      },3000)
+      },2000)
     }else{
       reject('Error en la pagina.')
     }

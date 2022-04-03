@@ -7,7 +7,7 @@ const ComicList = ({listaComics}) =>{
     <section className="catalogo">
                  {
                      listaComics.map((item) => (
-                     <Comics id={item.id} nombre={item.nombre} portada={item.portada} descripcion={item.descripcion}/>))
+                     <Comics id={item.id} nombre={item.nombre} portada={item.portada} descripcion={item.descripcion} stock={item.stock}/>))
                  }
                 </section> 
     );

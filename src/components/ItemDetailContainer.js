@@ -7,8 +7,6 @@ const ItemDetailContainer = () => {
     const [comicDetail, setComicDetail] = useState()
 
     const { itemId } = useParams()
-    console.log(itemId)
-    console.log(comicDetail)
 
         useEffect(()=>{
         getComics
@@ -16,7 +14,7 @@ const ItemDetailContainer = () => {
             setComicDetail(res.find((item) => item.id === Number(itemId)))
         })
        
-}, [])
+},)
 
     return (
         <div>

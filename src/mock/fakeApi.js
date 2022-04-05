@@ -6,6 +6,7 @@ const comics = [
       descripcion: '¿Spider-man u Otto Octavius, heroe o amenaza?',
       categoria: "comics",
       stock: 15,
+      precio: 700,
     },
     {
       id: 2,
@@ -14,6 +15,7 @@ const comics = [
       descripcion: 'Otto se enfrenta a una amenaza cosmica proveniente de otro planeta',
       categoria: "comics",
       stock: 11,
+      precio: 700,
     },
     {
       id: 3,
@@ -22,6 +24,7 @@ const comics = [
       descripcion: 'Superior Spider-Man esta adquiriendo poderes.... ¿Cosmicos?',
       categoria: "comics",
       stock: 5,
+      precio: 700,
     },
     {
       id: 4,
@@ -30,6 +33,7 @@ const comics = [
       descripcion: 'Con la destruccion de San Francisco Otto tiene que demostrar ser el Superior amistoso vecino',
       categoria: "comics",
       stock: 17,
+      precio: 700,
     },
     {
       id: 5,
@@ -38,6 +42,7 @@ const comics = [
       descripcion: 'Primer enfrentamiento entre los dioses y la humanidad',
       categoria: "manga",
       stock: 25,
+      precio: 500,
     },
     {
       id: 6,
@@ -46,6 +51,7 @@ const comics = [
       descripcion: 'Despues de su primer derrota la humanidad revela su mejor arma',
       categoria: "manga",
       stock: 6,
+      precio: 500,
     },
     {
       id: 7,
@@ -54,6 +60,7 @@ const comics = [
       descripcion: 'La esperanza esta perdida, sera este nuestro fin?',
       categoria: "manga",
       stock: 8,
+      precio: 500,
     },
     {
       id: 8,
@@ -62,6 +69,7 @@ const comics = [
       descripcion: 'Una nueva luz de esperanza nos alumbra',
       categoria: "manga",
       stock: 10,
+      precio: 500,
     },
     {
       id: 9,
@@ -70,6 +78,7 @@ const comics = [
       descripcion: 'Funko pop Thanos',
       categoria: "merchandising",
       stock: 12,
+      precio: 3000,
     },
     {
       id: 10,
@@ -78,6 +87,7 @@ const comics = [
       descripcion: 'Funko pop X-23',
       categoria: "merchandising",
       stock: 15,
+      precio: 3000,
     },
     {
       id: 11,
@@ -86,6 +96,7 @@ const comics = [
       descripcion: 'Funko pop Spider-man',
       categoria: "merchandising",
       stock: 2,
+      precio: 3000,
     },
     {
       id: 12,
@@ -94,6 +105,7 @@ const comics = [
       descripcion: 'Funko pop Iron-man',
       categoria: "merchandising",
       stock: 3,
+      precio: 3000,
     },
   ]
 

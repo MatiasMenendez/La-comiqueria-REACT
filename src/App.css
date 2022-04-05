@@ -33,6 +33,11 @@ width: 100%;
 font-size: calc(10px + 2vmin);
 }
 
+.cart-widget {
+  color: black;
+  font-size: 30px;
+}
+
 img {width: 54%;
 height: 65%;}
 

@@ -1,14 +1,19 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import ItemCount from "./ItemCount";
 import Select from "./Select";
+import { CartContext } from "./CartContext";
+import { Link } from "react-router-dom";
 
 const options =[
   {value: 'Español', text:'Español'},
   {value: 'Ingles', text:'Ingles'},
 ]
 
-const ItemDetail = ({id, nombre, portada, descripcion, stock}) => {
+const ItemDetail = ({id, nombre, portada, descripcion, stock, precio}) => {
+
+  const { addItem, isInCart } = useContext(CartContext)
+  
 
   const navigate = useNavigate ()
 
@@ -17,8 +22,7 @@ const ItemDetail = ({id, nombre, portada, descripcion, stock}) => {
   }
 
   const [contador, setContador] = useState(1)
-
-  const [color, setColor] = useState('rojo')
+  const [color, setColor] = useState('Español')
 
   console.log(color)
 
@@ -29,8 +33,9 @@ const ItemDetail = ({id, nombre, portada, descripcion, stock}) => {
       portada,
       color,
       contador,
+      precio,
     }
-    console.log(itemToAdd)
+    addItem(itemToAdd)
   }
 
     return (
@@ -39,16 +44,25 @@ const ItemDetail = ({id, nombre, portada, descripcion, stock}) => {
   <div className="card-body">
     <h2 className="card-title">{nombre}</h2>
     <p className="card-text">{descripcion}</p>
+    <p className="card-title">$ {precio}</p>
     <small className="card-text"> cantidad disponible: {stock}</small>
     <Select
     options={options}
     onSelect={setColor}
     />
-    <ItemCount stock={stock} 
+
+    {
+    !isInCart(id)
+    ? <ItemCount stock={stock} 
     contador={contador}
     setContador={setContador}
     onAdd={agregarAlCarrito}/>
-  </div>
+    : <Link to="/cart" className="btn btn-success">Terminar mi compra</Link>
+    }
+    </div>
+
+    
+ 
     <hr/>
     <button className="btn btn-outline-primary" onClick={handleNavigate}>Volver</button>
   </div>

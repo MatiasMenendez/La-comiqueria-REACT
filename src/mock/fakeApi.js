@@ -59,7 +59,7 @@ const comics = [
       portada: "https://enportadacomics.com/52596-large_default/shuumatsu-no-valkyrie-record-of-ragnarok-03.jpg",
       descripcion: 'La esperanza esta perdida, sera este nuestro fin?',
       categoria: "manga",
-      stock: 8,
+      stock: 0,
       precio: 500,
     },
     {

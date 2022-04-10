@@ -38,6 +38,20 @@ const ItemDetail = ({id, nombre, portada, descripcion, stock, precio}) => {
     addItem(itemToAdd)
   }
 
+
+  if(stock === 0){
+    return <div className="card" style={{width:'18rem'}}>
+    <img src={portada} className="card-img-top" alt="..."/>
+    <div className="card-body">
+      <h2 className="card-title">{nombre}</h2>
+      <p className="card-text">{descripcion}</p>
+      <p className="card-title">$ {precio}</p>
+      <p style={{color: 'red', fontWeight: '700'}}>¡Item sin stock!</p>
+      <Link to={"/"} className="btn btn-primary">Volver</Link>
+      </div>
+      </div>}
+  
+
     return (
 <div className="card" style={{width:'18rem'}}>
   <img src={portada} className="card-img-top" alt="..."/>
@@ -46,6 +60,8 @@ const ItemDetail = ({id, nombre, portada, descripcion, stock, precio}) => {
     <p className="card-text">{descripcion}</p>
     <p className="card-title">$ {precio}</p>
     <small className="card-text"> cantidad disponible: {stock}</small>
+  
+
     <Select
     options={options}
     onSelect={setColor}

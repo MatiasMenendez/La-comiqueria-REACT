@@ -9,7 +9,7 @@ const CartWidget = () => {
 
     return (
         <Link to={"/cart"} className="cart-widget">
-          <BsFillCartFill/>
+          <BsFillCartFill />
           <span>{cartQuantity()}</span>
         </Link>
     )

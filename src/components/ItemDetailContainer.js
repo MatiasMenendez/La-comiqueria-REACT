@@ -1,7 +1,8 @@
 import React, {useEffect, useState} from "react";
 import { useParams } from "react-router-dom";
-import { getComics } from "../mock/fakeApi";
+import { db } from "../firebase/config";
 import ItemDetail from "./ItemDetail";
+import { doc, getDoc} from "firebase/firestore"
 
 const ItemDetailContainer = () => {
     const [comicDetail, setComicDetail] = useState()
@@ -9,12 +10,14 @@ const ItemDetailContainer = () => {
     const { itemId } = useParams()
 
         useEffect(()=>{
-        getComics
-        .then((res) =>{
-            setComicDetail(res.find((item) => item.id === Number(itemId)))
-        })
+        
+            const docRef = doc(db, "productos", itemId)
+            getDoc(docRef)
+            .then(doc =>{
+                setComicDetail({id: doc.id, ...doc.data()})
+            })
        
-},)
+},[itemId])
 
     return (
         <div>

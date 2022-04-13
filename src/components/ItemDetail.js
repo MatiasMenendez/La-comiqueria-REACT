@@ -10,7 +10,7 @@ const options =[
   {value: 'Ingles', text:'Ingles'},
 ]
 
-const ItemDetail = ({id, nombre, portada, descripcion, stock, precio}) => {
+const ItemDetail = ({id, nombre, portada, descripcion, stock, precio, categoria}) => {
 
   const { addItem, isInCart } = useContext(CartContext)
   
@@ -34,6 +34,7 @@ const ItemDetail = ({id, nombre, portada, descripcion, stock, precio}) => {
       color,
       contador,
       precio,
+      categoria,
     }
     addItem(itemToAdd)
   }
@@ -50,6 +51,32 @@ const ItemDetail = ({id, nombre, portada, descripcion, stock, precio}) => {
       <Link to={"/"} className="btn btn-primary">Volver</Link>
       </div>
       </div>}
+
+if(categoria === "merchandising"){
+  return <div className="card" style={{width:'18rem'}}>
+  <img src={portada} className="card-img-top" alt="..."/>
+  <div className="card-body">
+    <h2 className="card-title">{nombre}</h2>
+    <p className="card-text">{descripcion}</p>
+    <p className="card-title">$ {precio}</p>
+    <small className="card-text"> cantidad disponible: {stock}</small>
+
+    {
+    !isInCart(id)
+    ? <ItemCount stock={stock} 
+    contador={contador}
+    setContador={setContador}
+    onAdd={agregarAlCarrito}/>
+    : <Link to="/cart" className="btn btn-success">Terminar mi compra</Link>
+    }
+    </div>
+
+    
+ 
+    <hr/>
+    <button className="btn btn-outline-primary" onClick={handleNavigate}>Volver</button>
+  </div>
+}
   
 
     return (

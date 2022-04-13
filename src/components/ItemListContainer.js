@@ -1,31 +1,41 @@
 import React, {useEffect, useState} from "react";
 import ComicList from "./ItemList";
-import { getComics } from "../mock/fakeApi";
 import { useParams } from "react-router-dom";
+import { collection, getDocs, query, where } from "firebase/firestore"
+import { db } from "../firebase/config"
 
-const ItemListContainer = ({comics}) => {
+const ItemListContainer = () => {
 
   const [listaComics, setListaComics] = useState([])
-  
-  const {categoriaId} = useParams()
+  const [loading, setLoading] =useState(false)
 
-    useEffect(()=>{
-      getComics
-      .then((res) => {
-        if (categoriaId){
-          setListaComics(res.filter((comics) => comics.categoria === categoriaId))
-        } else {
-          setListaComics(res)
-        }
-      })
-      .catch((error) => console.log(error))
-    }, [categoriaId])
+  const { categoriaId } = useParams()
+
+    useEffect( ()=>{
+      setLoading(true)
+
+      const productosRef = collection(db, "productos")
+      const q = categoriaId ? query(productosRef, where('categoria', '==', categoriaId)) : productosRef
+
+      getDocs(q)
+       .then(resp => {
+         const items = resp.docs.map((doc) => ({id: doc.id, ...doc.data()}))
+         setListaComics(items)
+       })
+       .finally (() => {
+         setLoading(false)
+       })
+
+      }, [categoriaId])
 
   return(
-    <div>
-      <h1>{comics}</h1>
-      <ComicList listaComics={listaComics}/>
-    </div>
+    <>
+    {
+      loading
+      ? <h1>Loading...</h1>
+      : <ComicList listaComics={listaComics}/>
+    }
+    </>
   )
 }
 

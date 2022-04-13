@@ -9,7 +9,7 @@ const Cart = () => {
     const { cart, cartTotal, emptyCart, removeItem } = useContext(CartContext)
 
     if(cart.length === 0) {
-      return <div>
+      return <div className="card">
         <h2>Tu carrito esta vacio</h2>
         <hr/>
         <h5>Vuelve al shop para comprar</h5>
@@ -18,7 +18,7 @@ const Cart = () => {
     }
 
    return(
-    <div className="container my-5">
+    <div className="container my-5 card">
       <h2> Tu compra</h2>
       <hr/>
       {

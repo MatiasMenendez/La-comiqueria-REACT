@@ -22,16 +22,14 @@ const ItemDetail = ({id, nombre, portada, descripcion, stock, precio, categoria}
   }
 
   const [contador, setContador] = useState(1)
-  const [color, setColor] = useState('Español')
-
-  console.log(color)
+  const [idiom, setIdiom] = useState('Español')
 
   const agregarAlCarrito = () => {
     const itemToAdd ={
       id,
       nombre,
       portada,
-      color,
+      idiom,
       contador,
       precio,
       categoria,
@@ -91,7 +89,7 @@ if(categoria === "merchandising"){
 
     <Select
     options={options}
-    onSelect={setColor}
+    onSelect={setIdiom}
     />
 
     {

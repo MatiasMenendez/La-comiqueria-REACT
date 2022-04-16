@@ -32,7 +32,9 @@ const ItemListContainer = () => {
     <>
     {
       loading
-      ? <h1 className="card">Loading...</h1>
+      ? <div class="spinner-border text-primary" role="status">
+      <span class="visually-hidden">Loading...</span>
+    </div>
       : <ComicList listaComics={listaComics}/>
     }
     </>

@@ -2,7 +2,6 @@
   text-align: center;
 }
 
-
 .App-link {
   color: #61dafb;
 }
@@ -45,3 +44,16 @@ flex-wrap: wrap;
 .cart-widget {text-decoration: none;}
 
 .card {margin: 30px 30px 30px 30px;}
+
+.contacto {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: grey;
+  width: 800px;
+  margin-left: 400px;
+}
+
+.checkout {
+  background-color: chocolate;
+}

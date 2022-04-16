@@ -59,7 +59,7 @@ const Checkout = () => {
     }
 
     if(orderId) {
-        return <div className="container my-5">
+        return <div className="container my-5" key={orderId.id}>
             <h2>Tu orden se registro exitosamente!</h2>
             <hr/>
             <h4>Orden numero: {orderId}</h4>
@@ -72,7 +72,7 @@ const Checkout = () => {
     }
 
     return(
-        <div className="container my-5">
+        <div className="container my-5 checkout">
           <h2>Checkout</h2>
           <hr/>
 

@@ -6,8 +6,8 @@ import { CartContext } from "./CartContext";
 import { Link } from "react-router-dom";
 
 const options =[
-  {value: 'Español', text:'Español'},
-  {value: 'Ingles', text:'Ingles'},
+  {value: 'Español', text:'Español', id: 1},
+  {value: 'Ingles', text:'Ingles', id: 2},
 ]
 
 const ItemDetail = ({id, nombre, portada, descripcion, stock, precio, categoria}) => {
@@ -37,18 +37,6 @@ const ItemDetail = ({id, nombre, portada, descripcion, stock, precio, categoria}
     addItem(itemToAdd)
   }
 
-
-  if(stock === 0){
-    return <div className="card" style={{width:'18rem'}}>
-    <img src={portada} className="card-img-top" alt="..."/>
-    <div className="card-body">
-      <h2 className="card-title">{nombre}</h2>
-      <p className="card-text">{descripcion}</p>
-      <p className="card-title">$ {precio}</p>
-      <p style={{color: 'red', fontWeight: '700'}}>¡Item sin stock!</p>
-      <Link to={"/"} className="btn btn-primary">Volver</Link>
-      </div>
-      </div>}
 
 if(categoria === "merchandising"){
   return <div className="card" style={{width:'18rem'}}>

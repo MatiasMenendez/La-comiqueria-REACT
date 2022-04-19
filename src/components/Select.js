@@ -5,11 +5,14 @@ const Select = ({options = [], onSelect, }) => {
         onSelect(e.target.value)
     }
 
+    console.log(options, "hola mundo")
+
     return (
         <select onChange={handleSelect}>
-          {options.map((el) => <option value={el.value}>{el.text}</option>)}
+          {options.map((el) => <option key={el.id} value={el.value}>{el.text}</option>)}
         </select>
     )
+    
 }
 
 export default Select

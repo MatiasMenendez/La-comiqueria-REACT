@@ -32,8 +32,8 @@ const ItemListContainer = () => {
     <>
     {
       loading
-      ? <div class="spinner-border text-primary" role="status">
-      <span class="visually-hidden">Loading...</span>
+      ? <div className="spinner-border text-primary" role="status">
+      <span className="visually-hidden">Loading...</span>
     </div>
       : <ComicList listaComics={listaComics}/>
     }

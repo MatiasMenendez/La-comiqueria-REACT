@@ -3,12 +3,15 @@ import { CartContext } from "./CartContext"
 import { db } from "../firebase/config"
 import { collection, addDoc, Timestamp, updateDoc, getDoc, doc } from "firebase/firestore"
 import { Navigate, Link } from "react-router-dom"
+import SinStock from "./SinStock"
+
 
 const Checkout = () => {
 
     const {cart, cartTotal, emptyCart} = useContext(CartContext)
 
     const [orderId, setOrderId] = useState(null)
+    const [StockVacio, setStockVacio] = useState(false)
 
     const [values, setValues] = useState ({
         nombre: '',
@@ -44,7 +47,7 @@ const Checkout = () => {
                         stock: doc.data().stock - item.contador
                     })
                  } else {
-                     alert('No hay stock de este item')
+                     setStockVacio(true)
                  }
                  
              })
@@ -58,8 +61,12 @@ const Checkout = () => {
     
     }
 
+    if(StockVacio === true){
+        return <SinStock/>
+    }
+
     if(orderId) {
-        return <div className="container my-5" key={orderId.id}>
+        return <div className="checkout container my-5" key={orderId.id}>
             <h2>Tu orden se registro exitosamente!</h2>
             <hr/>
             <h4>Orden numero: {orderId}</h4>

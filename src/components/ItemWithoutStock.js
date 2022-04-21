@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 
-const ItemWithoutStock = ({nombre, portada, descripcion, stock, precio}) => {
+const ItemWithoutStock = ({nombre, portada, descripcion, precio}) => {
 
   
     return( <div className="card" style={{width:'18rem'}}>
